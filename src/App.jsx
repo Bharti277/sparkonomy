@@ -8,10 +8,10 @@ import TotalEarning from "./components/TotalEarning";
 
 function App() {
   return (
-    <div className="bg-[rgba(249,211,197,0.54)]">
+    <div className="bg-[rgba(255,221,218,0.54)]">
       <Navbar />
       <Dashboard />
-      <div className="flex justify-center items-center">
+      <div className=" md:flex md:justify-center md:items-center">
         <TotalEarning />
         <IncomeTrend />
       </div>

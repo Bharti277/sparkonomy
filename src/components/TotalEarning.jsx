@@ -2,18 +2,37 @@ import React from "react";
 
 const TotalEarning = () => {
   return (
-    <div className="p-4 grid bg-white dark:bg-secondary-dark-bg rounded-lg">
-      <div className="m-4 bg-gray-200 border-2 border-gray-300 p-4 rounded-lg">
-        <div>Total Earnings</div>
-        <div>$63,448.78</div>
+    <div className="space-y-6">
+      {/* Total Earnings */}
+      <div className="bg-white rounded-2xl p-6 shadow-sm text-center sm:text-left">
+        <h3 className="text-sm font-medium text-gray-600 mb-2">
+          Total Earnings
+        </h3>
+        <p className="text-3xl sm:text-4xl font-bold text-gray-900">
+          $1,25,000
+        </p>
       </div>
-      <div className="m-4 bg-gray-200 border-2 border-gray-300 p-4 rounded-lg">
-        <div>Last 6 Months</div>
-        <div>+2.65%</div>
-      </div>
-      <div className="m-4 bg-gray-200 border-2 border-gray-300 p-4 rounded-lg">
-        <div>Last 6 Months</div>
-        <div>+2.65%</div>
+
+      {/* Payment Status */}
+      <div className="bg-white rounded-2xl p-6 shadow-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="text-center sm:text-left">
+            <h4 className="text-sm font-medium text-gray-600 mb-1">
+              Payment Awaited
+            </h4>
+            <p className="text-xl sm:text-2xl font-semibold text-gray-900">
+              $25,000
+            </p>
+          </div>
+          <div className="text-center sm:text-left">
+            <h4 className="text-sm font-medium text-gray-600 mb-1">
+              Payment Overdue
+            </h4>
+            <p className="text-xl sm:text-2xl font-semibold text-gray-900">
+              $25,000
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
