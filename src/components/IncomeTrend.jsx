@@ -6,6 +6,7 @@ import {
   BarElement,
   PointElement,
   LineElement,
+  LineController, // Added LineController
   Title,
   Tooltip,
   Legend,
@@ -18,10 +19,12 @@ ChartJS.register(
   BarElement,
   PointElement,
   LineElement,
+  LineController, // Register LineController
   Title,
   Tooltip,
   Legend
 );
+
 const IncomeTrend = () => {
   const monthData = [
     { month: "Jan", income: 3, growth: -20 },
@@ -46,7 +49,7 @@ const IncomeTrend = () => {
       },
       {
         type: "line",
-        label: "mom Growth",
+        label: "MoM Growth",
         data: monthData.map((d) => d.growth),
         borderColor: "#EF4444",
         backgroundColor: "#EF4444",
@@ -100,7 +103,14 @@ const IncomeTrend = () => {
     },
     plugins: {
       legend: {
-        display: false,
+        display: true, // Enable legend to show labels
+        position: "bottom", // Position legend at the top
+        labels: {
+          color: "#374151", // Text color for legend
+          font: {
+            size: 12,
+          },
+        },
       },
       tooltip: {
         callbacks: {
@@ -122,8 +132,8 @@ const IncomeTrend = () => {
   };
 
   return (
-    <div>
-      <Bar data={data} options={options} height={300} width={400} />
+    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border-2 border-gray-300 w-full h-[300px] sm:h-[350px] md:h-[400px]">
+      <Bar data={data} options={options} />
     </div>
   );
 };
