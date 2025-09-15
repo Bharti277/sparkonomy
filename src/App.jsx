@@ -11,7 +11,7 @@ function App() {
     <div className="bg-[rgba(255,221,218,0.54)]">
       <Navbar />
       <Dashboard />
-      <div className=" md:flex md:justify-center md:items-center">
+      <div>
         <TotalEarning />
         <IncomeTrend />
       </div>

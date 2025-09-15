@@ -6,7 +6,7 @@ import {
   BarElement,
   PointElement,
   LineElement,
-  LineController, // Added LineController
+  LineController,
   Title,
   Tooltip,
   Legend,
@@ -19,7 +19,7 @@ ChartJS.register(
   BarElement,
   PointElement,
   LineElement,
-  LineController, // Register LineController
+  LineController,
   Title,
   Tooltip,
   Legend
@@ -49,13 +49,10 @@ const IncomeTrend = () => {
       },
       {
         type: "line",
-        label: "MoM Growth",
+        label: "momGrowth",
         data: monthData.map((d) => d.growth),
-        borderColor: "#EF4444",
+        borderColor: "brown",
         backgroundColor: "#EF4444",
-        pointBackgroundColor: "#EF4444",
-        pointBorderColor: "#EF4444",
-        pointRadius: 4,
         yAxisID: "y2",
         tension: 0.4,
       },
@@ -103,10 +100,10 @@ const IncomeTrend = () => {
     },
     plugins: {
       legend: {
-        display: true, // Enable legend to show labels
-        position: "bottom", // Position legend at the top
+        display: true,
+        position: "bottom",
         labels: {
-          color: "#374151", // Text color for legend
+          color: "#374151",
           font: {
             size: 12,
           },
@@ -132,8 +129,17 @@ const IncomeTrend = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border-2 border-gray-300 w-full h-[300px] sm:h-[350px] md:h-[400px]">
-      <Bar data={data} options={options} />
+    <div className="p-6 ">
+      <div className="bg-white rounded-2xl p-6 shadow-sm">
+        <h3 className="text-sm font-medium text-gray-600 mb-2">Income Trend</h3>
+        <p className="text-xs text-gray-400 mb-6">
+          Your monthly income and growth for the last 6 months
+        </p>
+
+        <div className="relative h-48 w-full">
+          <Bar options={options} data={data} />
+        </div>
+      </div>
     </div>
   );
 };

@@ -18,16 +18,18 @@ const Dashboard = () => {
             <p className="text-sm text-gray-500 mb-1">
               Start by creating and sending new invoice
             </p>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-400 hidden sm:block">
               Or upload an existing invoice and set payment reminder
             </p>
           </div>
         </div>
-
+        <p className=" text-xl text-center sm:hidden text-purple-500">
+          Or upload an existing invoice and set payment reminder
+        </p>
         {/* Time Period Card */}
         <div className="bg-white rounded-2xl p-6 shadow-sm flex-1">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-            <h3 className="text-sm font-medium text-gray-600 mb-2 sm:mb-0">
+          <div className="flex justify-between items-center  sm:items-center sm:justify-between mb-4">
+            <h3 className="text-sm font-medium text-gray-600  sm:mb-0">
               Time Period
             </h3>
             <span className="text-xs sm:text-sm text-gray-400">
